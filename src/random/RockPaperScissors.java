@@ -6,6 +6,7 @@ package random;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -21,7 +22,7 @@ public class RockPaperScissors extends JPanel implements ActionListener{
 	private JButton rockButton = new JButton();
 	private JButton paperButton = new JButton();
 	private JButton scissorsButton = new JButton();
-
+	int r = 0;
 	private JLabel instructionLabel = new JLabel();
 
 	private Icon rockImage;
@@ -29,8 +30,9 @@ public class RockPaperScissors extends JPanel implements ActionListener{
 	private Icon scissorsImage;
 
 	private Dimension buttonDim = new Dimension(300, 200);
-    
+    Random x = new Random();
     public void run(){
+
 
 		try {
 
@@ -38,9 +40,9 @@ public class RockPaperScissors extends JPanel implements ActionListener{
 			// Drop the pictures into this package
 			// Replace the names below with your images
 		
-			rockImage = new ImageIcon(getClass().getResource("rock.png"));
-			paperImage = new ImageIcon(getClass().getResource("paper.jpeg"));
-			scissorsImage = new ImageIcon(getClass().getResource("scissors.jpeg"));
+			rockImage = new ImageIcon(getClass().getResource("rock.jpg"));
+			paperImage = new ImageIcon(getClass().getResource("paper.jpg"));
+			scissorsImage = new ImageIcon(getClass().getResource("scissors.png"));
 
 		} catch (Exception ex) {
 			JOptionPane.showMessageDialog(null, "Cannot find one or more of your images");
@@ -79,10 +81,10 @@ public class RockPaperScissors extends JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         
         //2. Run the program 4 times. Does the computer always choose the same thing?
-
+                            //yee
         //3. Change the value of opponentSelection to be a random number between 0 and 2;
         int opponentSelection = 0;
-        
+        opponentSelection = x.nextInt(2);
         //4. Run the program again. Is the result different?
  
         int selection = 0;
